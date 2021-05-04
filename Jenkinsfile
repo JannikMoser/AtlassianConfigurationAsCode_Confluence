@@ -27,7 +27,7 @@ pipeline {
     //In dieser Stage,wird der Deployment-Schritt aufgerufen 
     stage('Stage 2 - Deployment Groovy Skripts') {
     steps {
-      deployRestEndPoint (params.name, '')
+      deployRestEndPoint (params.name, '-test')
     }
     }
   }
