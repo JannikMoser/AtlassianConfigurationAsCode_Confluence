@@ -62,7 +62,7 @@ pipeline {
 // Mehtode um die RESTEndpoints zu deployen
 def deployRestEndPoint(name, env = '') {
 println "deploying $name to $env"
-String url = "https://${env}confluence.baloisenet.com/atlassian/rest/scriptrunner/latest/custom/customadmin/com.onresolve.scriptrunner.canned.common.rest.CustomRestEndpoint"
+String url = "https://${env}.confluence.baloisenet.com/atlassian/rest/scriptrunner/latest/custom/customadmin/com.onresolve.scriptrunner.canned.common.rest.CustomRestEndpoint"
 String scriptText = filePath("src/RESTEndpoints/$name").readToString()
 String payload = """{"FIELD_INLINE_SCRIPT":"${StringEscapeUtils.escapeJavaScript(scriptText)}","canned-script":"com.onresolve.scriptrunner.canned.common.rest.CustomRestEndpoint"}"""
 String auth = "admin_b037982:B037982"
