@@ -49,7 +49,7 @@ pipeline {
         fixed {
             emailext attachLog: true, body: '''Hallo Pipeline-Administrator
 Der Build der Pipeline ist durchgelaufen und die
-RESTEndpoints wurden korrekt deployed 
+RESTEndpoints wurden korrekt deployed. 
 Mit freundlichen Grüssen 
 ''', subject: 'Automatisierte Verteilung von Atlassian Tool Updates', to: 'jannik.moser@baloise.ch'
         }
@@ -60,7 +60,7 @@ Mit freundlichen Grüssen
 //Speichert einen JUnit Report unter als TEST.xml ab
             junit allowEmptyResults: true, testResults: '**/src/*reports/TEST*.xml'
            emailext attachLog: true, body: '''Hallo Pipeline-Administrator
-Der Build der Pipeline ist fehlgeschlagen. Im Anhang befinden sich die Logfiles
+Der Build der Pipeline ist fehlgeschlagen. Im Anhang befinden sich die Logfiles.
 Mit freundlichen Grüssen 
 ''', subject: 'Automatisierte Verteilung von Atlassian Tool Updates', to: 'jannik.moser@baloise.ch'
         }
